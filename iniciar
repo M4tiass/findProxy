@@ -1,0 +1,55 @@
+#!/bin/bash
+
+echo -e "\e[01;33mATENÇÃO FERRAMENTA APENAS PARA HACKERS \e[0m☠️\n\n\e[02mEssa ferramenta irá fazer solicitações\npara um domínio específico\nutilizando um range de ip que você inserir\nutilize com Dados móveis sem creditos\n\nFormato proxy: 10. ou 10.10. ou 10.10.10.\nEle irá fazer varias solicitações\nadicionando de 0 à 255 após o .\e[0m\n"; sleep 1
+
+while :; do
+echo -e "\e[01;37mColoque o IP/Proxy que deseja utilizar\e[0m"
+read -p "IP/Proxy: " IP
+
+dots=$(fgrep "." -o <<< $IP | wc -l)
+> ips.txt
+> OK.txt
+case $dots in
+  1) echo -e "\e[01;33mAmigo... 3 casas de ip, vai demorar pra diabo\e[0m\n"; sleep 1
+#    ESSE DEMORA PRA DIABO e precisar editar :P                                 
+#    ips=$(for i in {1..255}; do echo $IP$i.; done)
+#    ipss=$(for i in {1..255}; do ips2=$(sed -n "$i"p <<< "$ips"); for i1 in {1..255}; do echo $ips2$i1.; done; done)
+#    linhas=$(wc -l <<< "$ipss")
+#    ipsss=$(for i in $(seq $linhas); do ips2=$(sed -n "$i"p <<< "$ipss"); for i1 in {1..255}; do echo $ips2$i1 >> ips.txt; done; done)
+  ;;
+  2) ips=$(for i in {0..255}; do echo $IP$i.; done)
+      for i in {0..255}; do
+         case $i in 0) i=1; esac
+         ips2=$(sed -n "$i"p <<< "$ips");
+            for i1 in {0..255}; do
+                echo $ips2$i1 >> ips.txt
+            done
+      done
+      echo -e "\e[01;33mCerca de 65536 ips gerados, boa sorte kk\e[0m\n"; break;;
+  3) for i in {0..255}; do
+         echo $IP$i >> ips.txt
+     done
+     echo; break;;
+  *) echo -e "\e[01;31mInsira o formato corretamente\e[0m\n"; sleep 1
+esac
+done
+
+echo -e "\e[01;37mColoque o seu DOMÍNIO\e[0m"
+read -p "Domínio: " DOMINIO
+
+nums=$(seq 100 299 | tr -s '\n' '|')
+nums+=$(seq -s"|" 400 499)
+
+for i in $(seq $(wc -l < ips.txt)); do
+  ip=$(sed -n "$i"p ips.txt)
+   try=$(curl -m 3 -s -o /dev/null -w "%{http_code}" $DOMINIO -H "Upgrade: websocket" -x $ip:80)
+      eval "case $try in
+                $nums\ )
+                      echo -e \"\e[01;33m$ip\e[0m\c\"
+                      echo -e \"\e[01;37m IP OK\e[0m\"
+                      echo $ip >> OK.txt;;
+                  *)
+                     echo -e \"$ip\c\"
+                     echo -e \" -\e[01;33m STATUS RUIM.\e[0m\"
+           esac"
+done
