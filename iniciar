@@ -9,8 +9,8 @@ echo -e "\e[01;33mATENÇÃO FERRAMENTA APENAS PARA HACKERS \e[0m☠\n\n\e[02mEss
 while :; do
 echo -e "\e[01;37mColoque o IP/Proxy que deseja utilizar\e[0m"
 read -p "IP/Proxy: " IP
-echo -e "\e[01;37mColoque o PORTA que deseja utilizar\e[0m"
-read -p "IP/Proxy: " PORTA
+echo -e "\e[01;37mColoque a PORTA que deseja utilizar\e[0m"
+read -p "Porta: " PORTA
 echo -e "\e[01;37mColoque o seu DOMÍNIO\e[0m \e[02mse n tiver use alguma host\e[0m"
 read -p "Domínio: " DOMINIO
 
