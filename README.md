@@ -8,3 +8,5 @@
 - caso não tenha um domínio, poderá usar alguma host (google.com, etc.)(recomendável usar dominio)
 
 <code>git clone https://github.com/M4tiass/Findproxy && cd Findproxy && chmod +x iniciar && ./iniciar<code>
+
+	
