@@ -7,4 +7,4 @@
 - Agora opção de colocar porta, para testes com possível disponibilidade em ssl.
 - caso não tenha um domínio, poderá usar alguma host (google.com, etc.)(recomendável usar dominio)
 
-git clone https://github.com/M4tiass/Findproxy && cd Findproxy && chmod +x iniciar && ./iniciar
+<code>git clone https://github.com/M4tiass/Findproxy && cd Findproxy && chmod +x iniciar && ./iniciar<code>
