@@ -7,7 +7,7 @@
 </p>
 
 <code>apt update -y; apt upgrade -y; apt install git -y</code><br>
-<code>git clone https://github.com/M4tiass/findproxy && cd Findproxy && chmod +x iniciar && ./iniciar</code>
+<code>git clone https://github.com/M4tiass/findProxy && cd Findproxy && chmod +x iniciar && ./iniciar</code>
 
 <p>
   Agora opção de colocar portas, ex; 80 ou 443 etc.<br>
