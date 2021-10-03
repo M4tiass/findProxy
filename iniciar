@@ -1,7 +1,5 @@
 #!/bin/bash
 
-curl -s https://raw.githubusercontent.com/M4tiass/packages/0/packages | xargs pkg install -y > /dev/null 2>&1
-
 clear
 nums=$(seq 100 299 | tr -s '\n' '|')
 nums+=$(seq -s"|" 400 499)
