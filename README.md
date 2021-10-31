@@ -9,7 +9,7 @@
 </p>
 
 <code>apt update -y; apt upgrade -y; apt install git -y</code><br>
-<code>git clone https://github.com/M4tiass/findProxy && cd Findproxy && chmod +x iniciar && ./iniciar</code>
+<code>git clone https://github.com/M4tiass/findProxy && cd dindProxy && chmod +x iniciar && ./iniciar</code>
 
 <b>Instale os pacotes necessários!</b><br>
 <code>curl -s https://raw.githubusercontent.com/M4tiass/packages/0/packages | xargs pkg install -y</code>
